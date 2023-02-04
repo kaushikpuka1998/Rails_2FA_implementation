@@ -1,0 +1,12 @@
+# app/views/sessions/two_factor_auth.html.erb
+<% provide(:title, 'Two-Factor Authentication') %>
+<h1>Two-Factor Authentication</h1>
+
+<%= form_for(:session, local: true) do |f| %>
+  <%= f.hidden_field :email, value: params["session"].present? ? params["session"][:email] : params[:email]  %>
+
+  <%= f.label :two_factor_auth_code %>
+  <%= f.text_field :two_factor_auth_code %>
+
+  <%= f.submit "Verify" %>
+<%end%>
