@@ -1,7 +1,8 @@
-# app/views/sessions/two_factor_auth.html.erb
 <% provide(:title, 'Two-Factor Authentication') %>
 <h1>Two-Factor Authentication</h1>
 
+
+<%= "OTP has sent to your mail ID: #{params["session"].present? ? params["session"][:email] : params[:email]}"%>
 <%= form_for(:session, local: true) do |f| %>
   <%= f.hidden_field :email, value: params["session"].present? ? params["session"][:email] : params[:email]  %>
 

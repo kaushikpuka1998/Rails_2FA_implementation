@@ -20,7 +20,6 @@
     end
 
     def show
-      debugger
       begin
         if session[:user_id] == -56 ||  session[:user_id].to_i != params[:id].to_i
           redirect_to "/login"
