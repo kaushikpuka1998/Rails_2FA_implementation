@@ -65,12 +65,13 @@ Rails.application.configure do
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.default :charset => "utf-8"
-
+  ENV["mail"] = "kgstrivers@gmail.com"
+  ENV["app_password"] = "zsczisgrofqkuzmd"
   config.action_mailer.smtp_settings = {
     :authentication => :plain,
     :address => "smtp.gmail.com",
     :port => 587,
-    :user_name => "kgstrivers@gmail.com",
-    :password => "zsczisgrofqkuzmd"
+    :user_name => ENV["mail"],
+    :password => ENV["app_password"]
   }
 end
